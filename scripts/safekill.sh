@@ -39,7 +39,7 @@ function safe_end_procs {
       cmd='Enter "~."'
     elif [[ "$pane_proc" == "psql" ]] || [[ "$pane_proc" == "mysql" ]]; then
       cmd='Enter "\q"'
-    elif [[ "$pane_proc" == python* ]]; then
+    elif [[ "$pane_proc" == python* ]] || [[ "$pane_proc" == "ruby" ]]; then
       cmd='C-c C-d'
     fi
     echo $cmd | xargs tmux send-keys -t "$pane_id"
